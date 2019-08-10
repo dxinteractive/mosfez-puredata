@@ -1,0 +1,73 @@
+#N canvas 957 0 958 971 10;
+#X obj 35 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 23 278 timer;
+#X msg 24 326 start \$1;
+#X msg 23 207 tempo 1 samp;
+#X obj 35 232 r bar;
+#X obj 8 14 inlet~;
+#X obj 254 88 spigot;
+#X obj 279 64 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 256 42 r bar;
+#X obj 257 160 outlet~;
+#X obj 63 14 inlet;
+#X msg 125 326 stop;
+#X obj 386 106 del 1000;
+#X obj 397 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 74 256 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 289 258 symbol \$2;
+#X obj 256 281 pack \$1 s;
+#X obj 257 236 t b b;
+#X obj 245 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 24 303 10 0 0 0 - - -;
+#X obj 254 111 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 23 178 loadbang;
+#X obj 83 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 253 66 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 180 102 stop;
+#X obj 253 16 table \$1-\$2-rec 441000;
+#X msg 255 305 \; \$1-\$2-rec const 0;
+#X obj 7 359 tabwritefade \$1 \$1-\$2-rec 441000 5;
+#X obj 255 134 tabplay2 \$1 \$1-\$2-rec 5;
+#X obj 40 39 route record done play stop clear;
+#X obj 117 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 1 0;
+#X connect 1 0 19 0;
+#X connect 2 0 27 1;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 27 0;
+#X connect 6 0 20 0;
+#X connect 7 0 6 1;
+#X connect 8 0 23 0;
+#X connect 10 0 29 0;
+#X connect 11 0 27 1;
+#X connect 12 0 28 0;
+#X connect 13 0 12 0;
+#X connect 14 0 1 1;
+#X connect 15 0 16 1;
+#X connect 16 0 26 0;
+#X connect 17 0 16 0;
+#X connect 17 1 15 0;
+#X connect 18 0 17 0;
+#X connect 19 0 2 0;
+#X connect 20 0 28 0;
+#X connect 21 0 3 0;
+#X connect 22 0 3 0;
+#X connect 23 0 6 0;
+#X connect 24 0 28 0;
+#X connect 28 0 9 0;
+#X connect 29 0 18 0;
+#X connect 29 0 14 0;
+#X connect 29 1 11 0;
+#X connect 29 2 30 0;
+#X connect 29 3 24 0;
+#X connect 29 4 18 0;

@@ -1,0 +1,45 @@
+#N canvas 518 75 395 226 10;
+#X obj 36 41 inlet;
+#X obj 36 106 symbol;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X text 56 54 Copyright (C) 2013 \, Dan Wilcox <danomatika@gmail.com>
+;
+#X restore 259 101 pd LICENSE-GPL;
+#X obj 76 173 outlet;
+#X text 230 41 based on : zexy [tabdump];
+#X obj 36 69 route set bang;
+#N canvas 177 160 195 196 arg1 0;
+#X obj 109 139 outlet;
+#X obj 34 21 loadbang;
+#X obj 34 49 t b b;
+#X obj 34 75 symbol \$1;
+#X obj 109 74 symbol;
+#X obj 34 103 select symbol;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 1;
+#X connect 5 1 0 0;
+#X restore 127 107 pd arg1;
+#X text 24 9 usage: c_tabdump <table name>;
+#X obj 76 145 array get;
+#X connect 0 0 5 0;
+#X connect 1 0 8 2;
+#X connect 5 0 1 0;
+#X connect 5 1 8 0;
+#X connect 6 0 8 2;
+#X connect 8 0 3 0;
